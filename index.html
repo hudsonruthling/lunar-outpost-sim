@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outpost Odyssey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NASA mission simulator</p>
+          <h1>Outpost Odyssey</h1>
+        </div>
+        <button id="resetButton" class="secondary-btn">New mission</button>
+      </header>
+
+      <main class="game-grid">
+        <section class="panel mission-panel">
+          <div class="panel-header">
+            <h2>Mission Control</h2>
+            <div class="badge" id="siteBadge">Moon</div>
+          </div>
+
+          <div class="mission-summary">
+            <div>
+              <span class="label">Day</span>
+              <strong id="dayValue">1</strong>
+            </div>
+            <div>
+              <span class="label">Outpost health</span>
+              <strong id="stabilityValue">100%</strong>
+            </div>
+            <div>
+              <span class="label">Mission goal</span>
+              <strong id="goalValue">Survive 24 days</strong>
+            </div>
+          </div>
+
+          <div class="resource-grid" id="resourceGrid"></div>
+
+          <div class="status-row">
+            <div>
+              <span class="label">Solar weather</span>
+              <strong id="weatherValue">Calm</strong>
+            </div>
+            <div>
+              <span class="label">Comms delay</span>
+              <strong id="delayValue">2 min</strong>
+            </div>
+          </div>
+
+          <div class="action-panel">
+            <h3>Choose your next move</h3>
+            <div class="action-buttons">
+              <button class="action-btn" data-action="lifeSupport">
+                <span class="action-title">Life Support</span>
+                <span class="action-desc">Keep air and water cycling. Costs power.</span>
+              </button>
+              <button class="action-btn" data-action="shield">
+                <span class="action-title">Add shielding</span>
+                <span class="action-desc">Reduce radiation risk. Costs power and materials.</span>
+              </button>
+              <button class="action-btn" data-action="greenhouse">
+                <span class="action-title">Grow Food</span>
+                <span class="action-desc">Grow crops for longer missions. Uses water and power.</span>
+              </button>
+              <button class="action-btn" data-action="science">
+                <span class="action-title">Run Science</span>
+                <span class="action-desc">Collect data, but radiation and power go up.</span>
+              </button>
+              <button class="action-btn" data-action="repair">
+                <span class="action-title">Repair &amp; Reboot</span>
+                <span class="action-desc">Fix systems and reduce small failures.</span>
+              </button>
+              <button class="action-btn" data-action="rest">
+                <span class="action-title">Conserve Energy</span>
+                <span class="action-desc">Save power for the next hazard.</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel side-panel">
+          <div class="panel-header">
+            <h2>Mission Log</h2>
+          </div>
+          <ul id="logList" class="log-list"></ul>
+        </aside>
+
+        <section class="panel data-panel">
+          <div class="panel-header">
+            <h2>Why it matters</h2>
+          </div>
+          <div id="siteStory" class="story-box"></div>
+          <div class="data-card">
+            <h3>Real NASA inspiration</h3>
+            <ul>
+              <li>DONKI solar weather data helps model radiation risk.</li>
+              <li>OSDR research highlights radiation effects on astronauts.</li>
+              <li>Artemis and Mars missions guide habitat and surface conditions.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
